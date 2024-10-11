@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Projetos Sustentáveis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #009edb; /* UN blue */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #009edb; /* UN blue */
+        }
+        #chatbox {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        #messageInput {
+            width: calc(100% - 80px);
+            padding: 10px;
+            margin-right: 10px;
+        }
+        #sendButton {
+            padding: 10px 20px;
+            background-color: #009edb; /* UN blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #sendButton:hover {
+            background-color: #007bb5;
+        }
+        .section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .project-example {
+            background-color: #fdf8e5; /* Light yellow */
+            border-left: 5px solid #ffd500; /* UN yellow */
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .project-example h3 {
+            color: #009edb; /* UN blue */
+            margin-top: 0;
+        }
+        .chatbot-title {
+            background-color: #009edb; /* UN blue */
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chat de Projetos Sustentáveis</h1>
+    </header>
+
+    <div class="section">
+        <h2 class="chatbot-title">EcoBot - Seu Assistente de Sustentabilidade</h2>
+        <div id="chatbox"></div>
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+        <button id="sendButton">Enviar</button>
+    </div>
+
+    <div class="section">
+        <h2>Sobre Projetos Sustentáveis</h2>
+        <p>Projetos sustentáveis são iniciativas que visam promover o desenvolvimento econômico, social e ambiental de maneira equilibrada. Esses projetos buscam minimizar os impactos negativos ao meio ambiente, promover a justiça social e assegurar a prosperidade econômica a longo prazo.</p>
+    </div>
+
+    <div class="section">
+        <h2>Exemplos de Projetos Sustentáveis</h2>
+        
+        <div class="project-example">
+            <h3>ODS 2: Fome Zero e Agricultura Sustentável</h3>
+            <p>Projeto: Criação de hortas comunitárias urbanas para garantir a segurança alimentar e promover práticas agrícolas sustentáveis.</p>
+        </div>
+
+        <div class="project-example">
+            <h3>ODS 7: Energia Limpa e Acessível</h3>
+            <p>Projeto: Implementação de projetos de energia solar em áreas rurais para fornecer eletricidade limpa e acessível.</p>
+        </div>
+
+        <div class="project-example">
+            <h3>ODS 14: Vida na Água</h3>
+            <p>Projeto: Iniciativas de limpeza de oceanos e praias para combater a poluição marinha e proteger a vida aquática.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function() {
+            var message = document.getElementById('messageInput').value;
+            if (message.trim() !== '') {
+                var chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += '<p><strong>Você:</strong> ' + message + '</p>';
+                document.getElementById('messageInput').value = '';
+                chatbox.scrollTop = chatbox.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
